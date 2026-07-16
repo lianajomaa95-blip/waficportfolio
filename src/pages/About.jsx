@@ -10,22 +10,15 @@ const fade = {
 
 export default function About() {
   return (
-    <motion.div {...fade} className="max-w-6xl mx-auto px-6 py-16 md:py-20">
+    <motion.div {...fade} className="max-w-6xl mx-auto px-6 py-12 md:py-20">
       <p className="font-mono text-xs tracking-[0.25em] uppercase text-gold-500 mb-4">About</p>
-      <h1 className="text-4xl md:text-5xl font-extrabold mb-12">
+      <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-8 md:mb-12">
         Precision from concept to construction.
       </h1>
 
-      {/* Photo + Bio */}
-      <div className="grid md:grid-cols-[0.9fr_1.4fr] gap-12 md:gap-16 items-start">
-        <div className="relative">
-          <div className="aspect-[4/5] rounded-2xl overflow-hidden border border-navy-700 bg-navy-800">
-            <img src={aboutPhoto} alt="Wafic Abouhosh" className="w-full h-full object-cover" />
-          </div>
-          <div className="absolute -bottom-4 -left-4 w-24 h-24 border-2 border-gold-500 rounded-2xl -z-10" />
-        </div>
-
-        <div className="space-y-5 text-slate text-lg leading-relaxed">
+      {/* Bio + Photo (photo on right, side-by-side on all sizes) */}
+      <div className="grid grid-cols-[1.6fr_1fr] gap-4 sm:gap-8 md:gap-16 items-start">
+        <div className="space-y-4 sm:space-y-5 text-slate text-sm sm:text-base md:text-lg leading-relaxed">
           <p>
             I'm Wafic Abouhosh, a mechanical engineer specializing in MEP design
             and BIM. Based in <span className="text-mist">Milan, Italy</span>, I
@@ -58,10 +51,17 @@ export default function About() {
             buildability — so what's modeled is what gets built.
           </p>
         </div>
+
+        <div className="relative">
+          <div className="aspect-[4/5] rounded-xl md:rounded-2xl overflow-hidden border border-navy-700 bg-navy-800">
+            <img src={aboutPhoto} alt="Wafic Abouhosh" className="w-full h-full object-cover" />
+          </div>
+          <div className="absolute -bottom-3 -right-3 md:-bottom-4 md:-right-4 w-16 h-16 md:w-24 md:h-24 border-2 border-gold-500 rounded-xl md:rounded-2xl -z-10" />
+        </div>
       </div>
 
       {/* Quick facts */}
-      <div className="mt-16 rounded-2xl border border-navy-700 bg-navy-900 overflow-hidden max-w-md">
+      <div className="mt-14 md:mt-16 rounded-2xl border border-navy-700 bg-navy-900 overflow-hidden max-w-md">
         <div className="px-6 py-4 border-b border-navy-800 font-mono text-xs tracking-[0.18em] uppercase text-slate">
           // Engineer.spec
         </div>
@@ -80,7 +80,7 @@ export default function About() {
       </div>
 
       {/* How I work */}
-      <div className="mt-20">
+      <div className="mt-16 md:mt-20">
         <p className="font-mono text-xs tracking-[0.25em] uppercase text-gold-500 mb-8">How I work</p>
         <div className="grid sm:grid-cols-3 gap-5">
           {[

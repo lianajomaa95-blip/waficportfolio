@@ -12,34 +12,34 @@ export default function Home() {
   return (
     <motion.div {...fade}>
       {/* ============ HERO ============ */}
-      <section className="max-w-6xl mx-auto px-6 py-16 md:py-20">
-        <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+      <section className="max-w-6xl mx-auto px-6 py-12 md:py-20">
+        <div className="grid grid-cols-[1.5fr_1fr] gap-4 sm:gap-8 md:gap-16 items-center">
           <div>
-            <p className="font-mono text-xs tracking-[0.25em] uppercase text-gold-500 mb-5">
+            <p className="font-mono text-[0.6rem] sm:text-xs tracking-[0.18em] sm:tracking-[0.25em] uppercase text-gold-500 mb-3 sm:mb-5">
               Mechanical · MEP · BIM Engineer
             </p>
-            <h1 className="text-4xl md:text-6xl font-extrabold mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold mb-4 sm:mb-6">
               Wafic<br />Abouhosh
             </h1>
-            <p className="text-lg text-slate max-w-md mb-8">
+            <p className="text-sm sm:text-base md:text-lg text-slate max-w-md mb-5 sm:mb-8">
               I design and coordinate the mechanical systems buildings run on —
               modeled in BIM, coordinated to the millimetre, ready to build.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <Link to="/contact" className="px-6 py-3 rounded-full bg-gold-500 text-navy-950 font-medium hover:bg-gold-400 transition">
+            <div className="flex flex-wrap gap-3">
+              <Link to="/contact" className="px-5 py-2.5 sm:px-6 sm:py-3 rounded-full bg-gold-500 text-navy-950 text-sm sm:text-base font-medium hover:bg-gold-400 transition">
                 Get in touch
               </Link>
-              <Link to="/projects" className="px-6 py-3 rounded-full border border-navy-700 text-mist font-medium hover:border-gold-500 transition">
+              <Link to="/projects" className="px-5 py-2.5 sm:px-6 sm:py-3 rounded-full border border-navy-700 text-mist text-sm sm:text-base font-medium hover:border-gold-500 transition">
                 View projects
               </Link>
             </div>
           </div>
 
-          <div className="relative max-w-xs mx-auto md:ml-auto md:mr-0">
-            <div className="aspect-[4/5] rounded-2xl overflow-hidden border border-navy-700 bg-navy-800">
+          <div className="relative">
+            <div className="aspect-[4/5] rounded-xl md:rounded-2xl overflow-hidden border border-navy-700 bg-navy-800">
               <img src={waficPhoto} alt="Wafic Abouhosh" className="w-full h-full object-cover" />
             </div>
-            <div className="absolute -bottom-4 -right-4 w-24 h-24 border-2 border-gold-500 rounded-2xl -z-10" />
+            <div className="absolute -bottom-3 -right-3 md:-bottom-4 md:-right-4 w-16 h-16 md:w-24 md:h-24 border-2 border-gold-500 rounded-xl md:rounded-2xl -z-10" />
           </div>
         </div>
       </section>
