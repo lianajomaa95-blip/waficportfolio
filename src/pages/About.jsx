@@ -62,7 +62,7 @@ export default function About() {
       {/* Quick facts */}
       <div className="mt-12 sm:mt-16 rounded-2xl border border-navy-700 bg-navy-900 overflow-hidden max-w-md">
         <div className="px-6 py-4 border-b border-navy-800 font-mono text-xs tracking-[0.18em] uppercase text-slate">
-          // Engineer.spec
+          Overview
         </div>
         {[
           ["Discipline", "Mechanical / MEP"],
