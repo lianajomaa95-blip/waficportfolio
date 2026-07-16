@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-navy-950: #0A1128;
+  --color-navy-900: #0D1B34;
+  --color-navy-800: #12294D;
+  --color-navy-700: #1F3E70;
+  --color-navy-600: #2E5591;
+  --color-gold-400: #E4C989;
+  --color-gold-500: #CFAF76;
+  --color-gold-600: #A8864F;
+  --color-mist: #E8EDF5;
+  --color-slate: #8A9BB8;
+
+  --font-display: "Sora", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--color-navy-950);
+  color: var(--color-mist);
+  font-family: var(--font-body);
+  font-size: 17px;               /* larger base text */
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Headings: bigger, tighter, more presence */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+::selection { background-color: var(--color-gold-500); color: var(--color-navy-950); }
