@@ -12,14 +12,22 @@ export default function About() {
   return (
     <motion.div {...fade} className="max-w-6xl mx-auto px-5 sm:px-6 py-10 md:py-20">
       <p className="font-mono text-[0.65rem] sm:text-xs tracking-[0.25em] uppercase text-gold-500 mb-3 sm:mb-4">About</p>
-      <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold leading-tight mb-7 sm:mb-12">
+      <h1 className="text-xl sm:text-3xl md:text-5xl font-extrabold leading-tight mb-6 sm:mb-12">
         Precision from concept to construction.
       </h1>
 
-      {/* Bio + Photo — side by side, photo on the right */}
-      <div className="grid grid-cols-[1.7fr_1fr] gap-4 sm:gap-10 md:gap-16 items-start">
-        <div className="space-y-3.5 sm:space-y-5 text-slate text-[0.82rem] sm:text-base md:text-lg leading-relaxed">
-          <p>
+      {/* Bio + Photo. Mobile: photo floats right, text wraps. Desktop: two columns. */}
+      <div className="md:grid md:grid-cols-[1.7fr_1fr] md:gap-16 md:items-start">
+        {/* Text */}
+        <div className="text-slate text-[0.9rem] sm:text-base md:text-lg leading-relaxed">
+          {/* Floated photo — MOBILE ONLY */}
+          <div className="float-right w-32 sm:w-40 ml-4 mb-2 md:hidden">
+            <div className="aspect-[3/4] rounded-lg overflow-hidden border border-navy-700 bg-navy-800 shadow-lg shadow-navy-950/40">
+              <img src={aboutPhoto} alt="Wafic Abouhosh" className="w-full h-full object-cover" />
+            </div>
+          </div>
+
+          <p className="mb-4">
             I'm Wafic Abouhosh, a mechanical engineer specializing in MEP design
             and BIM. Based in <span className="text-mist">Milan, Italy</span>, I
             design and coordinate mechanical, plumbing, and fire-protection
@@ -27,7 +35,7 @@ export default function About() {
             architectural and structural intent into precise, coordinated,
             code-compliant engineering.
           </p>
-          <p>
+          <p className="mb-4">
             My work runs from LOD 400/500 Revit modeling and multidiscipline
             clash coordination in Navisworks, to 2D shop and construction
             drawings ready for site — plus specialist swimming-pool and
@@ -50,10 +58,12 @@ export default function About() {
             services, my focus stays the same: precision, clean coordination, and
             buildability — so what's modeled is what gets built.
           </p>
+          <div className="clear-both" />
         </div>
 
-        <div className="relative">
-          <div className="aspect-[3/4] rounded-lg md:rounded-2xl overflow-hidden border border-navy-700 bg-navy-800 shadow-xl shadow-navy-950/40 sticky top-24">
+        {/* Photo column — DESKTOP ONLY */}
+        <div className="relative hidden md:block">
+          <div className="aspect-[3/4] rounded-2xl overflow-hidden border border-navy-700 bg-navy-800 shadow-xl shadow-navy-950/40 sticky top-24">
             <img src={aboutPhoto} alt="Wafic Abouhosh" className="w-full h-full object-cover" />
           </div>
         </div>
@@ -62,7 +72,7 @@ export default function About() {
       {/* Quick facts */}
       <div className="mt-12 sm:mt-16 rounded-2xl border border-navy-700 bg-navy-900 overflow-hidden max-w-md">
         <div className="px-6 py-4 border-b border-navy-800 font-mono text-xs tracking-[0.18em] uppercase text-slate">
-          Overview
+          At a Glance
         </div>
         {[
           ["Discipline", "Mechanical / MEP"],

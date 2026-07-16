@@ -26,22 +26,26 @@ const certs = [
 
 export default function Experience() {
   return (
-    <motion.div {...fade} className="max-w-4xl mx-auto px-6 py-16 md:py-20">
-      <p className="font-mono text-xs tracking-[0.25em] uppercase text-gold-500 mb-4">Track record</p>
-      <h1 className="text-4xl md:text-5xl font-extrabold mb-12">Experience</h1>
+    <motion.div {...fade} className="max-w-4xl mx-auto px-5 sm:px-6 py-10 md:py-20">
+      <p className="font-mono text-[0.65rem] sm:text-xs tracking-[0.25em] uppercase text-gold-500 mb-3 sm:mb-4">Track record</p>
+      <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-3">Experience</h1>
+      <p className="text-slate text-sm sm:text-base md:text-lg max-w-2xl mb-10 sm:mb-14">
+        Four years across MEP design, BIM modeling, estimation and site delivery —
+        spanning Lebanon, Saudi Arabia and Miami.
+      </p>
 
       <div className="relative">
         {experience.map((job, i) => (
-          <div key={i} className="relative pl-8 pb-10 border-l border-navy-700 last:border-l-transparent last:pb-0">
-            <span className={`absolute -left-[6px] top-1 w-3 h-3 rounded-full border-2 ${job.now ? "bg-gold-500 border-gold-500" : "bg-navy-950 border-gold-500"}`} />
+          <div key={i} className="relative pl-6 sm:pl-8 pb-9 sm:pb-10 border-l border-navy-700 last:border-l-transparent last:pb-0">
+            <span className={`absolute -left-[6px] top-1.5 w-3 h-3 rounded-full border-2 ${job.now ? "bg-gold-500 border-gold-500" : "bg-navy-950 border-gold-500"}`} />
             <div className="flex flex-wrap justify-between items-baseline gap-x-4 gap-y-1">
-              <h3 className="text-xl font-semibold">{job.role}</h3>
-              <span className="font-mono text-xs text-slate whitespace-nowrap">{job.date}</span>
+              <h3 className="text-base sm:text-xl font-semibold">{job.role}</h3>
+              <span className="font-mono text-[0.65rem] sm:text-xs text-slate whitespace-nowrap">{job.date}</span>
             </div>
-            <p className="text-gold-500 font-medium mt-1">
+            <p className="text-gold-500 font-medium mt-1 text-sm sm:text-base">
               {job.company} <span className="text-slate font-normal">· {job.place}</span>
             </p>
-            <p className="text-slate mt-3 leading-relaxed">{job.desc}</p>
+            <p className="text-slate mt-2.5 sm:mt-3 text-sm sm:text-base leading-relaxed">{job.desc}</p>
             {job.projects.length > 0 && (
               <div className="flex flex-wrap gap-2 mt-3">
                 {job.projects.map((p) => (
@@ -53,10 +57,10 @@ export default function Experience() {
         ))}
       </div>
 
-      <div className="mt-16">
-        <p className="font-mono text-xs tracking-[0.25em] uppercase text-gold-500 mb-6">Education</p>
+      <div className="mt-14 sm:mt-16">
+        <p className="font-mono text-[0.65rem] sm:text-xs tracking-[0.25em] uppercase text-gold-500 mb-5 sm:mb-6">Education</p>
         <div className="rounded-2xl border border-navy-700 bg-navy-900 p-6">
-          <h3 className="text-xl font-semibold">B.E. Mechanical Engineering</h3>
+          <h3 className="text-lg sm:text-xl font-semibold">B.E. Mechanical Engineering</h3>
           <p className="text-gold-500 mt-1">Beirut Arab University</p>
           <p className="font-mono text-xs text-slate mt-1">Oct 2016 — Jun 2021</p>
           <span className="inline-block mt-4 px-4 py-1.5 rounded-full border border-navy-700 font-mono text-sm">
@@ -66,12 +70,12 @@ export default function Experience() {
       </div>
 
       <div className="mt-12">
-        <p className="font-mono text-xs tracking-[0.25em] uppercase text-gold-500 mb-6">Certifications</p>
+        <p className="font-mono text-[0.65rem] sm:text-xs tracking-[0.25em] uppercase text-gold-500 mb-5 sm:mb-6">Certifications</p>
         <div className="rounded-2xl border border-navy-700 bg-navy-900 overflow-hidden">
           {certs.map(([name, org, year], i, arr) => (
-            <div key={name} className={`flex justify-between items-center gap-4 px-6 py-4 ${i < arr.length - 1 ? "border-b border-navy-800" : ""}`}>
+            <div key={name} className={`flex justify-between items-center gap-4 px-5 sm:px-6 py-4 ${i < arr.length - 1 ? "border-b border-navy-800" : ""}`}>
               <div>
-                <div className="font-medium">{name}</div>
+                <div className="font-medium text-sm sm:text-base">{name}</div>
                 <div className="font-mono text-xs text-slate mt-0.5">{org}</div>
               </div>
               <span className="font-mono text-sm text-gold-500">{year}</span>
@@ -80,7 +84,7 @@ export default function Experience() {
         </div>
       </div>
 
-      <div className="mt-16">
+      <div className="mt-14 sm:mt-16">
         <Link to="/contact" className="inline-block px-8 py-4 rounded-full bg-gold-500 text-navy-950 font-semibold hover:bg-gold-400 transition">
           Get in touch
         </Link>
