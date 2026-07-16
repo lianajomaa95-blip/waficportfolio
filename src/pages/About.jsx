@@ -10,15 +10,15 @@ const fade = {
 
 export default function About() {
   return (
-    <motion.div {...fade} className="max-w-6xl mx-auto px-6 py-12 md:py-20">
-      <p className="font-mono text-xs tracking-[0.25em] uppercase text-gold-500 mb-4">About</p>
-      <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-8 md:mb-12">
+    <motion.div {...fade} className="max-w-6xl mx-auto px-5 sm:px-6 py-10 md:py-20">
+      <p className="font-mono text-[0.65rem] sm:text-xs tracking-[0.25em] uppercase text-gold-500 mb-3 sm:mb-4">About</p>
+      <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold leading-tight mb-7 sm:mb-12">
         Precision from concept to construction.
       </h1>
 
-      {/* Bio + Photo (photo on right, side-by-side on all sizes) */}
-      <div className="grid grid-cols-[1.6fr_1fr] gap-4 sm:gap-8 md:gap-16 items-start">
-        <div className="space-y-4 sm:space-y-5 text-slate text-sm sm:text-base md:text-lg leading-relaxed">
+      {/* Bio + Photo — side by side, photo on the right */}
+      <div className="grid grid-cols-[1.7fr_1fr] gap-4 sm:gap-10 md:gap-16 items-start">
+        <div className="space-y-3.5 sm:space-y-5 text-slate text-[0.82rem] sm:text-base md:text-lg leading-relaxed">
           <p>
             I'm Wafic Abouhosh, a mechanical engineer specializing in MEP design
             and BIM. Based in <span className="text-mist">Milan, Italy</span>, I
@@ -53,15 +53,14 @@ export default function About() {
         </div>
 
         <div className="relative">
-          <div className="aspect-[4/5] rounded-xl md:rounded-2xl overflow-hidden border border-navy-700 bg-navy-800">
+          <div className="aspect-[3/4] rounded-lg md:rounded-2xl overflow-hidden border border-navy-700 bg-navy-800 shadow-xl shadow-navy-950/40 sticky top-24">
             <img src={aboutPhoto} alt="Wafic Abouhosh" className="w-full h-full object-cover" />
           </div>
-          <div className="absolute -bottom-3 -right-3 md:-bottom-4 md:-right-4 w-16 h-16 md:w-24 md:h-24 border-2 border-gold-500 rounded-xl md:rounded-2xl -z-10" />
         </div>
       </div>
 
       {/* Quick facts */}
-      <div className="mt-14 md:mt-16 rounded-2xl border border-navy-700 bg-navy-900 overflow-hidden max-w-md">
+      <div className="mt-12 sm:mt-16 rounded-2xl border border-navy-700 bg-navy-900 overflow-hidden max-w-md">
         <div className="px-6 py-4 border-b border-navy-800 font-mono text-xs tracking-[0.18em] uppercase text-slate">
           // Engineer.spec
         </div>
@@ -80,24 +79,24 @@ export default function About() {
       </div>
 
       {/* How I work */}
-      <div className="mt-16 md:mt-20">
-        <p className="font-mono text-xs tracking-[0.25em] uppercase text-gold-500 mb-8">How I work</p>
-        <div className="grid sm:grid-cols-3 gap-5">
+      <div className="mt-14 sm:mt-20">
+        <p className="font-mono text-[0.65rem] sm:text-xs tracking-[0.25em] uppercase text-gold-500 mb-6 sm:mb-8">How I work</p>
+        <div className="grid sm:grid-cols-3 gap-4 sm:gap-5">
           {[
             ["Modeled to the millimetre", "LOD 400/500 Revit models built with real construction tolerances in mind."],
             ["Coordinated across disciplines", "Clash-free routing of mechanical, plumbing, fire and electrical before site."],
             ["Built to be built", "Layouts developed around installation sequence, access, and maintainability."],
           ].map(([title, desc]) => (
-            <div key={title} className="p-6 rounded-xl border border-navy-800 bg-navy-900">
-              <h3 className="text-lg font-semibold mb-2">{title}</h3>
-              <p className="text-slate">{desc}</p>
+            <div key={title} className="p-5 sm:p-6 rounded-xl border border-navy-800 bg-navy-900">
+              <h3 className="text-base sm:text-lg font-semibold mb-2">{title}</h3>
+              <p className="text-slate text-sm sm:text-base">{desc}</p>
             </div>
           ))}
         </div>
       </div>
 
       {/* CTA */}
-      <div className="mt-16 flex flex-wrap gap-4">
+      <div className="mt-14 sm:mt-16 flex flex-wrap gap-3 sm:gap-4">
         <Link to="/projects" className="px-6 py-3 rounded-full bg-gold-500 text-navy-950 font-medium hover:bg-gold-400 transition">
           See my projects
         </Link>
