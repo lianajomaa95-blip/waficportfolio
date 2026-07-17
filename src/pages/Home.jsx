@@ -16,21 +16,21 @@ export default function Home() {
         <div className="grid grid-cols-[1.4fr_1fr] gap-5 sm:gap-10 md:gap-16 items-center">
           <div>
             <p className="font-mono text-[0.55rem] sm:text-xs tracking-[0.15em] sm:tracking-[0.25em] uppercase text-gold-500 mb-2.5 sm:mb-5">
-              Mechanical · MEP · BIM
+              Wafic Abouhosh — Mechanical Engineer
             </p>
-            <h1 className="text-2xl sm:text-4xl md:text-6xl font-extrabold leading-[1.05] mb-3 sm:mb-6">
-              Wafic<br />Abouhosh
+            <h1 className="text-2xl sm:text-4xl md:text-6xl font-extrabold leading-[1.08] mb-4 sm:mb-6">
+              Mechanical systems,<br />engineered with precision.
             </h1>
             <p className="text-[0.82rem] sm:text-base md:text-lg text-slate leading-relaxed max-w-md mb-4 sm:mb-8">
-              I design and coordinate the mechanical systems buildings run on —
-              modeled in BIM, coordinated to the millimetre, ready to build.
+              MEP design and BIM for residential, commercial and luxury projects —
+              coordinated with care, and built to last.
             </p>
             <div className="flex flex-wrap gap-2.5 sm:gap-3">
               <Link to="/contact" className="px-4 py-2 sm:px-6 sm:py-3 rounded-full bg-gold-500 text-navy-950 text-[0.8rem] sm:text-base font-medium hover:bg-gold-400 transition">
                 Get in touch
               </Link>
               <Link to="/projects" className="px-4 py-2 sm:px-6 sm:py-3 rounded-full border border-navy-700 text-mist text-[0.8rem] sm:text-base font-medium hover:border-gold-500 transition">
-                View projects
+                View work
               </Link>
             </div>
           </div>
@@ -46,12 +46,12 @@ export default function Home() {
 
       {/* ============ ABOUT SUMMARY ============ */}
       <section className="border-t border-navy-800">
-        <div className="max-w-6xl mx-auto px-5 sm:px-6 py-12 sm:py-14">
-          <p className="font-mono text-[0.65rem] sm:text-xs tracking-[0.25em] uppercase text-gold-500 mb-4">01 — About</p>
-          <p className="text-lg sm:text-xl md:text-2xl font-display leading-snug max-w-3xl">
-            Mechanical engineer specializing in MEP design and BIM, based in Milan.
-            I turn architectural intent into precise, coordinated, code-compliant
-            systems — from LOD 400/500 Revit models to site-ready drawings.
+        <div className="max-w-6xl mx-auto px-5 sm:px-6 py-12 sm:py-16">
+          <p className="font-mono text-xs sm:text-sm font-medium tracking-[0.2em] uppercase text-gold-500 mb-4">Overview</p>
+          <p className="text-lg sm:text-xl md:text-2xl font-display font-semibold leading-snug max-w-3xl">
+            A mechanical engineer specializing in MEP design and BIM, based in
+            Milan — turning architectural intent into precise, coordinated systems,
+            from concept modeling to site-ready documentation.
           </p>
           <Link to="/about" className="inline-block mt-6 sm:mt-8 text-gold-500 font-medium hover:text-gold-400 transition">
             More about me →
@@ -61,16 +61,16 @@ export default function Home() {
 
       {/* ============ EXPERTISE SUMMARY ============ */}
       <section className="border-t border-navy-800">
-        <div className="max-w-6xl mx-auto px-5 sm:px-6 py-12 sm:py-14">
-          <p className="font-mono text-[0.65rem] sm:text-xs tracking-[0.25em] uppercase text-gold-500 mb-4">02 — Expertise</p>
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-8 sm:mb-10">What I do</h2>
+        <div className="max-w-6xl mx-auto px-5 sm:px-6 py-12 sm:py-16">
+          <p className="font-mono text-xs sm:text-sm font-medium tracking-[0.2em] uppercase text-gold-500 mb-4">Expertise</p>
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-8 sm:mb-10">Areas of practice</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
             {[
-              ["MEP System Design", "Mechanical, HVAC, plumbing & fire-protection design to international standards."],
-              ["BIM Modeling · LOD 400/500", "Revit MEP models from schematic design to fabrication-ready and as-built."],
-              ["Multidiscipline Coordination", "Clash-free coordination in Navisworks across all disciplines."],
-              ["Shop & Construction Drawings", "Coordinated, code-compliant 2D drawings ready for site."],
-              ["Pool & Water Features", "Plumbing, equipment & electrical design for luxury pools and spas."],
+              ["MEP System Design", "Mechanical, HVAC, plumbing and fire-protection design to international standards."],
+              ["BIM Modeling · LOD 400/500", "Revit MEP models from schematic design through fabrication-ready and as-built."],
+              ["Multidiscipline Coordination", "Clash-free coordination in Navisworks across all building services."],
+              ["Shop & Construction Drawings", "Coordinated, code-compliant documentation, ready for site."],
+              ["Pool & Water Features", "Plumbing, equipment and electrical design for luxury pools and spas."],
               ["Estimation & Application", "Product selection, submittals, BOQ take-off and cost estimation."],
             ].map(([title, desc]) => (
               <div key={title} className="p-5 sm:p-6 rounded-xl border border-navy-800 bg-navy-900 hover:border-gold-500/50 transition">
@@ -84,10 +84,12 @@ export default function Home() {
 
       {/* ============ CONTACT STRIP ============ */}
       <section className="border-t border-navy-800">
-        <div className="max-w-6xl mx-auto px-5 sm:px-6 py-12 sm:py-14 text-center">
-          <h2 className="text-xl sm:text-2xl md:text-4xl font-bold mb-4 sm:mb-6">Let's get in touch.</h2>
+        <div className="max-w-6xl mx-auto px-5 sm:px-6 py-14 sm:py-20 text-center">
+          <h2 className="text-xl sm:text-2xl md:text-4xl font-bold mb-4 sm:mb-6">
+            Let's discuss your project.
+          </h2>
           <p className="text-slate text-sm sm:text-lg mb-6 sm:mb-8 max-w-xl mx-auto">
-            Open to MEP design, BIM and coordination work — in Milan or remote.
+            Available for MEP design, BIM and coordination work — in Milan or remotely.
           </p>
           <Link to="/contact" className="inline-block px-6 py-3 sm:px-8 sm:py-4 rounded-full bg-gold-500 text-navy-950 font-semibold hover:bg-gold-400 transition">
             Get in touch

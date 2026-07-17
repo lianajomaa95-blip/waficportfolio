@@ -20,20 +20,11 @@ export default function Contact() {
     formData.append("subject", "New message from your portfolio");
 
     try {
-      const res = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formData,
-      });
+      const res = await fetch("https://api.web3forms.com/submit", { method: "POST", body: formData });
       const data = await res.json();
-      if (data.success) {
-        setStatus("sent");
-        e.target.reset();
-      } else {
-        setStatus("error");
-      }
-    } catch {
-      setStatus("error");
-    }
+      if (data.success) { setStatus("sent"); e.target.reset(); }
+      else setStatus("error");
+    } catch { setStatus("error"); }
   };
 
   const info = [
@@ -43,15 +34,16 @@ export default function Contact() {
   ];
 
   return (
-    <motion.div {...fade} className="max-w-6xl mx-auto px-6 py-16 md:py-20">
-      <p className="font-mono text-xs tracking-[0.25em] uppercase text-gold-500 mb-4">Contact</p>
-      <h1 className="text-4xl md:text-5xl font-extrabold mb-4">Let's get in touch.</h1>
-      <p className="text-slate text-lg max-w-2xl mb-12">
-        Available for MEP design, BIM modeling and coordination projects, on-site
-        in Milan or remotely. Fill in the form below and I'll respond promptly.
+    <motion.div {...fade} className="max-w-6xl mx-auto px-5 sm:px-6 py-10 md:py-20">
+      <p className="font-mono text-xs sm:text-sm font-medium tracking-[0.2em] uppercase text-gold-500 mb-3 sm:mb-4">Contact</p>
+      <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold mb-4">Let's talk.</h1>
+      <p className="text-slate text-sm sm:text-base md:text-lg max-w-2xl mb-10 sm:mb-12 leading-relaxed">
+        Whether you have a project in mind or simply want to connect, I'd be glad
+        to hear from you — for MEP design, BIM and coordination work, in Milan or
+        remotely.
       </p>
 
-      <div className="grid md:grid-cols-[1.2fr_1fr] gap-12 md:gap-16 items-start">
+      <div className="grid md:grid-cols-[1.2fr_1fr] gap-10 sm:gap-16 items-start">
         <form onSubmit={onSubmit} className="space-y-5">
           <div>
             <label className="font-mono text-xs uppercase tracking-wide text-slate">Name</label>
@@ -65,12 +57,10 @@ export default function Contact() {
             <label className="font-mono text-xs uppercase tracking-wide text-slate">Message</label>
             <textarea name="message" rows="5" required className="mt-2 w-full rounded-xl bg-navy-900 border border-navy-700 px-4 py-3 text-mist outline-none focus:border-gold-500 transition resize-none" />
           </div>
-
           <button type="submit" disabled={status === "sending"} className="px-8 py-4 rounded-full bg-gold-500 text-navy-950 font-semibold hover:bg-gold-400 transition disabled:opacity-60">
             {status === "sending" ? "Sending…" : "Send message"}
           </button>
-
-          {status === "sent" && <p className="text-gold-500 font-medium">✓ Message sent — thanks, I'll be in touch soon.</p>}
+          {status === "sent" && <p className="text-gold-500 font-medium">✓ Message sent — thank you, I'll be in touch soon.</p>}
           {status === "error" && <p className="text-red-400 font-medium">Something went wrong. Please email me directly instead.</p>}
         </form>
 
@@ -84,9 +74,7 @@ export default function Contact() {
             );
             return href ? (
               <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="block">{content}</a>
-            ) : (
-              <div key={label}>{content}</div>
-            );
+            ) : (<div key={label}>{content}</div>);
           })}
         </div>
       </div>
