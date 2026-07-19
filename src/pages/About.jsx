@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import aboutPhoto from "../assets/waficab.jpeg";
+import aboutPhoto from "../assets/wifooooo.jpeg";
 
 const fade = {
   initial: { opacity: 0, y: 12 },
