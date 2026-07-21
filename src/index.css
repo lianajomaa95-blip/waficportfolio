@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -8,12 +8,12 @@
   --color-navy-700: #1F3E70;
   --color-navy-600: #2E5591;
   --color-gold-400: #F1D089;
-  --color-gold-500: #E6B84A;
+  --color-gold-500: #E0B24E;
   --color-gold-600: #B98A2E;
   --color-mist: #E8EDF5;
   --color-slate: #8A9BB8;
 
-  --font-display: "Manrope", sans-serif;
+  --font-display: "Fraunces", serif;
   --font-body: "Inter", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
 }
@@ -32,9 +32,9 @@ body {
 
 h1, h2, h3, h4 {
   font-family: var(--font-display);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1.12;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.1;
 }
 
 ::selection { background-color: var(--color-gold-500); color: var(--color-navy-950); }

@@ -5,55 +5,58 @@ import waficPhoto from "../assets/wafic.jpeg";
 const fade = {
   initial: { opacity: 0, y: 12 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.4, ease: "easeOut" },
+  transition: { duration: 0.5, ease: "easeOut" },
 };
 
 export default function Home() {
   return (
     <motion.div {...fade}>
       {/* ============ HERO ============ */}
-      <section className="max-w-6xl mx-auto px-5 sm:px-6 py-10 md:py-20">
-        <div className="grid grid-cols-[1.4fr_1fr] gap-5 sm:gap-10 md:gap-16 items-center">
-          <div>
-            <p className="font-mono text-[0.55rem] sm:text-xs tracking-[0.15em] sm:tracking-[0.25em] uppercase text-gold-500 mb-2.5 sm:mb-5">
-              Wafic Abouhosh — Mechanical Engineer
+      <section className="max-w-6xl mx-auto px-5 sm:px-6 pt-8 pb-14 md:pt-16 md:pb-24">
+        <div className="grid grid-cols-1 md:grid-cols-[1.15fr_1fr] gap-8 md:gap-16 items-center">
+          {/* Text */}
+          <div className="order-2 md:order-1">
+            <p className="font-mono text-[0.6rem] sm:text-xs tracking-[0.22em] uppercase text-gold-500 mb-4 sm:mb-5">
+              Mechanical · MEP · BIM Engineer
             </p>
-            <h1 className="text-2xl sm:text-4xl md:text-6xl font-extrabold leading-[1.08] mb-4 sm:mb-6">
-              Mechanical systems,<br />engineered with precision.
+            <h1 className="text-3xl sm:text-5xl md:text-6xl font-semibold leading-[1.05] mb-5 sm:mb-6">
+              Mechanical systems,<br />
+              <span className="text-gold-500 italic">engineered with precision.</span>
             </h1>
-            <p className="text-[0.82rem] sm:text-base md:text-lg text-slate leading-relaxed max-w-md mb-4 sm:mb-8">
+            <p className="text-[0.92rem] sm:text-base md:text-lg text-slate leading-relaxed max-w-md mb-7 sm:mb-8">
               MEP design and BIM for residential, commercial and luxury projects —
               coordinated with care, and built to last.
             </p>
-            <div className="flex flex-wrap gap-2.5 sm:gap-3">
-              <Link to="/contact" className="px-4 py-2 sm:px-6 sm:py-3 rounded-full bg-gold-500 text-navy-950 text-[0.8rem] sm:text-base font-medium hover:bg-gold-400 transition">
+            <div className="flex flex-wrap gap-3">
+              <Link to="/contact" className="px-6 py-3 rounded-full bg-gold-500 text-navy-950 text-sm sm:text-base font-semibold hover:bg-gold-400 hover:-translate-y-0.5 transition-all">
                 Get in touch
               </Link>
-              <Link to="/projects" className="px-4 py-2 sm:px-6 sm:py-3 rounded-full border border-navy-700 text-mist text-[0.8rem] sm:text-base font-medium hover:border-gold-500 transition">
+              <Link to="/projects" className="px-6 py-3 rounded-full border border-navy-700 text-mist text-sm sm:text-base font-medium hover:border-gold-500 hover:-translate-y-0.5 transition-all">
                 View work
               </Link>
             </div>
           </div>
 
-          <div className="relative">
-            <div className="aspect-[3/4] rounded-lg md:rounded-2xl overflow-hidden border border-navy-700 bg-navy-800 shadow-xl shadow-navy-950/40">
+          {/* Photo */}
+          <div className="order-1 md:order-2 relative mx-auto w-full max-w-[240px] sm:max-w-xs md:max-w-none">
+            <div className="aspect-[4/5] rounded-2xl overflow-hidden border border-navy-700 bg-navy-800 shadow-2xl shadow-navy-950/50">
               <img src={waficPhoto} alt="Wafic Abouhosh" className="w-full h-full object-cover" />
             </div>
-            <div className="absolute -bottom-2.5 -right-2.5 md:-bottom-4 md:-right-4 w-12 h-12 md:w-24 md:h-24 border-2 border-gold-500 rounded-lg md:rounded-2xl -z-10" />
+            <div className="absolute -bottom-3 -right-3 md:-bottom-5 md:-right-5 w-16 h-16 md:w-28 md:h-28 border-2 border-gold-500 rounded-2xl -z-10" />
           </div>
         </div>
       </section>
 
       {/* ============ ABOUT SUMMARY ============ */}
       <section className="border-t border-navy-800">
-        <div className="max-w-6xl mx-auto px-5 sm:px-6 py-12 sm:py-16">
-          <p className="font-mono text-xs sm:text-sm font-medium tracking-[0.2em] uppercase text-gold-500 mb-4">Overview</p>
-          <p className="text-lg sm:text-xl md:text-2xl font-display font-semibold leading-snug max-w-3xl">
+        <div className="max-w-6xl mx-auto px-5 sm:px-6 py-14 sm:py-20">
+          <p className="font-mono text-[0.6rem] sm:text-xs tracking-[0.22em] uppercase text-gold-500 mb-5">Overview</p>
+          <p className="text-xl sm:text-2xl md:text-3xl font-display leading-snug max-w-3xl">
             A mechanical engineer specializing in MEP design and BIM, based in
             Milan — turning architectural intent into precise, coordinated systems,
             from concept modeling to site-ready documentation.
           </p>
-          <Link to="/about" className="inline-block mt-6 sm:mt-8 text-gold-500 font-medium hover:text-gold-400 transition">
+          <Link to="/about" className="inline-block mt-7 sm:mt-8 text-gold-500 font-medium hover:text-gold-400 transition">
             More about me →
           </Link>
         </div>
@@ -61,9 +64,9 @@ export default function Home() {
 
       {/* ============ EXPERTISE SUMMARY ============ */}
       <section className="border-t border-navy-800">
-        <div className="max-w-6xl mx-auto px-5 sm:px-6 py-12 sm:py-16">
-          <p className="font-mono text-xs sm:text-sm font-medium tracking-[0.2em] uppercase text-gold-500 mb-4">Expertise</p>
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-8 sm:mb-10">Areas of practice</h2>
+        <div className="max-w-6xl mx-auto px-5 sm:px-6 py-14 sm:py-20">
+          <p className="font-mono text-[0.6rem] sm:text-xs tracking-[0.22em] uppercase text-gold-500 mb-5">Expertise</p>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-8 sm:mb-12">Areas of practice</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
             {[
               ["MEP System Design", "Mechanical, HVAC, plumbing and fire-protection design to international standards."],
@@ -73,25 +76,26 @@ export default function Home() {
               ["Pool & Water Features", "Plumbing, equipment and electrical design for luxury pools and spas."],
               ["Estimation & Application", "Product selection, submittals, BOQ take-off and cost estimation."],
             ].map(([title, desc]) => (
-              <div key={title} className="p-5 sm:p-6 rounded-xl border border-navy-800 bg-navy-900 hover:border-gold-500/50 transition">
-                <h3 className="text-base sm:text-lg font-semibold mb-2">{title}</h3>
-                <p className="text-slate text-sm sm:text-base">{desc}</p>
+              <div key={title} className="group p-6 rounded-2xl border border-navy-800 bg-navy-900 hover:border-gold-500/50 hover:-translate-y-0.5 transition-all">
+                <h3 className="text-lg font-semibold mb-2">{title}</h3>
+                <p className="text-slate text-sm sm:text-base leading-relaxed">{desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ============ CONTACT STRIP ============ */}
+      {/* ============ CTA ============ */}
       <section className="border-t border-navy-800">
-        <div className="max-w-6xl mx-auto px-5 sm:px-6 py-14 sm:py-20 text-center">
-          <h2 className="text-xl sm:text-2xl md:text-4xl font-bold mb-4 sm:mb-6">
-            Let's discuss your project.
+        <div className="max-w-6xl mx-auto px-5 sm:px-6 py-16 sm:py-24 text-center">
+          <p className="font-mono text-xs sm:text-sm tracking-[0.3em] uppercase text-gold-500 mb-5">Let's Connect</p>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight mb-5 max-w-2xl mx-auto">
+            Let's build something precise.
           </h2>
-          <p className="text-slate text-sm sm:text-lg mb-6 sm:mb-8 max-w-xl mx-auto">
-            Available for MEP design, BIM and coordination work — in Milan or remotely.
+          <p className="text-slate text-sm sm:text-lg mb-8 max-w-xl mx-auto leading-relaxed">
+            Open to MEP design, BIM and coordination work — in Milan or remotely.
           </p>
-          <Link to="/contact" className="inline-block px-6 py-3 sm:px-8 sm:py-4 rounded-full bg-gold-500 text-navy-950 font-semibold hover:bg-gold-400 transition">
+          <Link to="/contact" className="inline-block px-8 py-4 rounded-full bg-gold-500 text-navy-950 font-semibold hover:bg-gold-400 hover:-translate-y-0.5 transition-all">
             Get in touch
           </Link>
         </div>
