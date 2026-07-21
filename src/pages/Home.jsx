@@ -47,7 +47,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ============ ABOUT SUMMARY ============ */}
+      {/* ============ OVERVIEW ============ */}
       <section className="border-t border-navy-800">
         <div className="max-w-6xl mx-auto px-5 sm:px-6 py-14 sm:py-20">
           <p className="font-mono text-[0.6rem] sm:text-xs tracking-[0.22em] uppercase text-gold-500 mb-5">Overview</p>
@@ -56,31 +56,9 @@ export default function Home() {
             Milan — turning architectural intent into precise, coordinated systems,
             from concept modeling to site-ready documentation.
           </p>
-          <Link to="/about" className="inline-block mt-7 sm:mt-8 text-gold-500 font-medium hover:text-gold-400 transition">
-            More about me →
-          </Link>
-        </div>
-      </section>
-
-      {/* ============ EXPERTISE SUMMARY ============ */}
-      <section className="border-t border-navy-800">
-        <div className="max-w-6xl mx-auto px-5 sm:px-6 py-14 sm:py-20">
-          <p className="font-mono text-[0.6rem] sm:text-xs tracking-[0.22em] uppercase text-gold-500 mb-5">Expertise</p>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-8 sm:mb-12">Areas of practice</h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-            {[
-              ["MEP System Design", "Mechanical, HVAC, plumbing and fire-protection design to international standards."],
-              ["BIM Modeling · LOD 400/500", "Revit MEP models from schematic design through fabrication-ready and as-built."],
-              ["Multidiscipline Coordination", "Clash-free coordination in Navisworks across all building services."],
-              ["Shop & Construction Drawings", "Coordinated, code-compliant documentation, ready for site."],
-              ["Pool & Water Features", "Plumbing, equipment and electrical design for luxury pools and spas."],
-              ["Estimation & Application", "Product selection, submittals, BOQ take-off and cost estimation."],
-            ].map(([title, desc]) => (
-              <div key={title} className="group p-6 rounded-2xl border border-navy-800 bg-navy-900 hover:border-gold-500/50 hover:-translate-y-0.5 transition-all">
-                <h3 className="text-lg font-semibold mb-2">{title}</h3>
-                <p className="text-slate text-sm sm:text-base leading-relaxed">{desc}</p>
-              </div>
-            ))}
+          <div className="flex flex-wrap gap-4 mt-8">
+            <Link to="/about" className="text-gold-500 font-medium hover:text-gold-400 transition">More about me →</Link>
+            <Link to="/services" className="text-slate font-medium hover:text-mist transition">View services →</Link>
           </div>
         </div>
       </section>
@@ -88,9 +66,9 @@ export default function Home() {
       {/* ============ CTA ============ */}
       <section className="border-t border-navy-800">
         <div className="max-w-6xl mx-auto px-5 sm:px-6 py-16 sm:py-24 text-center">
-          <p className="font-mono text-xs sm:text-sm tracking-[0.3em] uppercase text-gold-500 mb-5">Let's Connect</p>
+          <p className="font-mono text-sm sm:text-base tracking-[0.35em] uppercase text-gold-500 font-medium mb-6">Let's Connect</p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight mb-5 max-w-2xl mx-auto">
-            Let's build something precise.
+            Let's build something <span className="italic text-gold-500">precise.</span>
           </h2>
           <p className="text-slate text-sm sm:text-lg mb-8 max-w-xl mx-auto leading-relaxed">
             Open to MEP design, BIM and coordination work — in Milan or remotely.
