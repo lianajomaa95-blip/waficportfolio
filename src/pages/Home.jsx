@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import waficPhoto from "../assets/wafic.jpeg";
+import waficPhoto from "../assets/wafic.webp";
 
 const fade = {
   initial: { opacity: 0, y: 12 },
@@ -40,7 +40,15 @@ export default function Home() {
           {/* Photo */}
           <div className="order-1 md:order-2 relative mx-auto w-full max-w-[240px] sm:max-w-xs md:max-w-none">
             <div className="aspect-[4/5] rounded-2xl overflow-hidden border border-navy-700 bg-navy-800 shadow-2xl shadow-navy-950/50">
-              <img src={waficPhoto} alt="Wafic Abouhosh" className="w-full h-full object-cover" />
+              <img
+                src={waficPhoto}
+                alt="Wafic Abouhosh"
+                fetchPriority="high"
+                decoding="async"
+                width="900"
+                height="1125"
+                className="w-full h-full object-cover"
+              />
             </div>
             <div className="absolute -bottom-3 -right-3 md:-bottom-5 md:-right-5 w-16 h-16 md:w-28 md:h-28 border-2 border-gold-500 rounded-2xl -z-10" />
           </div>

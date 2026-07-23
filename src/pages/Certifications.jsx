@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import certFire from "../assets/revit fire.jpeg";
-import certPlumbing from "../assets/revit plumbing.jpeg";
-import certVentilation from "../assets/revit ventilation.jpeg";
-import certMep from "../assets/revit mep.jpeg";
-import certIc3 from "../assets/computing fundementals.jpeg";
+import certFire from "../assets/revit-fire.webp";
+import certPlumbing from "../assets/revit-plumbing.webp";
+import certVentilation from "../assets/revit-ventilation.webp";
+import certMep from "../assets/revit-mep.webp";
+import certIc3 from "../assets/computing-fundementals.webp";
 
 const fade = {
   initial: { opacity: 0, y: 12 },
@@ -50,7 +50,13 @@ export default function Certifications() {
               transition={{ duration: 0.3, ease: "easeOut" }}
             >
               <div className="bg-white flex items-center justify-center p-3 sm:p-5">
-                <img src={cert.img} alt={cert.title} className="max-h-[50vh] sm:max-h-[55vh] w-auto max-w-full rounded-md object-contain" />
+                <img
+                  src={cert.img}
+                  alt={cert.title}
+                  loading={index === 0 ? "eager" : "lazy"}
+                  decoding="async"
+                  className="max-h-[50vh] sm:max-h-[55vh] w-auto max-w-full rounded-md object-contain"
+                />
               </div>
               <div className="flex items-center justify-between gap-4 px-5 sm:px-7 py-5 border-t border-navy-800">
                 <div>

@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import makkah from "../assets/makkah-full.jpg";
-import mepCoordination from "../assets/MEP Coordination Model.jpeg";
-import fullBuilding from "../assets/Full-Building.jpeg";
-import entertainment from "../assets/Entertainment.jpeg";
-import mepDistribution from "../assets/MEP Services Distribution.jpeg";
-import plantRoom from "../assets/Plant & Pump Room.jpeg";
+import makkah from "../assets/makkah-full.webp";
+import mepCoordination from "../assets/mep-coordination-model.webp";
+import fullBuilding from "../assets/full-building.webp";
+import entertainment from "../assets/entertainment.webp";
+import mepDistribution from "../assets/mep-services-distribution.webp";
+import plantRoom from "../assets/plant-and-pump-room.webp";
 
 const fade = {
   initial: { opacity: 0, y: 12 },
@@ -45,16 +45,21 @@ export default function Projects() {
 
       {/* Grid */}
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-        {projects.map((p) => (
+        {projects.map((p, i) => (
           <article key={p.title} className="group relative rounded-2xl overflow-hidden border border-navy-800 bg-navy-900 hover:border-navy-600 transition">
             <div className="aspect-[4/3] overflow-hidden">
-              <img src={p.img} alt={p.title} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <img
+                src={p.img}
+                alt={p.title}
+                loading={i < 2 ? "eager" : "lazy"}
+                decoding="async"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
             </div>
             <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/25 to-transparent pointer-events-none" />
             <div className="absolute inset-x-0 bottom-0 p-5">
               <span className="font-mono text-[0.6rem] tracking-[0.16em] uppercase text-gold-500">{p.tag}</span>
               <h3 className="text-lg font-semibold mt-1">{p.title}</h3>
-              {/* On desktop the description reveals on hover; on mobile it always shows */}
               <p className="text-slate text-sm mt-1 leading-relaxed md:max-h-0 md:opacity-0 md:overflow-hidden md:transition-all md:duration-300 md:group-hover:max-h-24 md:group-hover:opacity-100">
                 {p.desc}
               </p>
@@ -75,7 +80,7 @@ export default function Projects() {
 
       {/* CTA */}
       <div className="mt-16 sm:mt-20 text-center border-t border-navy-800 pt-16 sm:pt-20">
-        <p className="font-mono text-xs sm:text-sm tracking-[0.3em] uppercase text-gold-500 mb-5">Let's Connect</p>
+        <p className="font-mono text-sm sm:text-base tracking-[0.35em] uppercase text-gold-500 font-medium mb-6">Let's Connect</p>
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold leading-tight mb-6 max-w-2xl mx-auto">
           Like what you see? Let's build the next one together.
         </h2>

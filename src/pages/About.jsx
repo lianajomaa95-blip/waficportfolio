@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import aboutPhoto from "../assets/wifooooo.jpeg";
+import aboutPhoto from "../assets/wifooooo.webp";
 
 const fade = {
   initial: { opacity: 0, y: 12 },
@@ -17,10 +17,18 @@ export default function About() {
       </h1>
 
       <div className="md:grid md:grid-cols-[1.6fr_1fr] md:gap-16 md:items-start">
-        {/* Mobile photo — centered, tasteful */}
+        {/* Mobile photo */}
         <div className="md:hidden mx-auto w-full max-w-[220px] mb-8">
           <div className="aspect-[4/5] rounded-2xl overflow-hidden border border-navy-700 bg-navy-800 shadow-2xl shadow-navy-950/50">
-            <img src={aboutPhoto} alt="Wafic Abouhosh" className="w-full h-full object-cover" />
+            <img
+              src={aboutPhoto}
+              alt="Wafic Abouhosh"
+              loading="lazy"
+              decoding="async"
+              width="400"
+              height="500"
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
 
@@ -49,7 +57,15 @@ export default function About() {
         {/* Desktop photo */}
         <div className="relative hidden md:block">
           <div className="aspect-[4/5] rounded-2xl overflow-hidden border border-navy-700 bg-navy-800 shadow-2xl shadow-navy-950/50 sticky top-24">
-            <img src={aboutPhoto} alt="Wafic Abouhosh" className="w-full h-full object-cover" />
+            <img
+              src={aboutPhoto}
+              alt="Wafic Abouhosh"
+              loading="lazy"
+              decoding="async"
+              width="400"
+              height="500"
+              className="w-full h-full object-cover"
+            />
           </div>
           <div className="absolute -bottom-5 -right-5 w-28 h-28 border-2 border-gold-500 rounded-2xl -z-10" />
         </div>
