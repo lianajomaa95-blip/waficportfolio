@@ -53,16 +53,16 @@ export default function Contact() {
         {/* Form */}
         <form onSubmit={onSubmit} className="space-y-5 order-2 md:order-1">
           <div>
-            <label className="font-mono text-xs uppercase tracking-wide text-slate">Name</label>
-            <input type="text" name="name" required className="mt-2 w-full rounded-xl bg-navy-900 border border-navy-700 px-4 py-3 text-mist outline-none focus:border-gold-500 transition" />
+            <label htmlFor="name" className="font-mono text-xs uppercase tracking-wide text-slate">Name</label>
+            <input id="name" type="text" name="name" required className="mt-2 w-full rounded-xl bg-navy-900 border border-navy-700 px-4 py-3 text-mist outline-none focus:border-gold-500 transition" />
           </div>
           <div>
-            <label className="font-mono text-xs uppercase tracking-wide text-slate">Email</label>
-            <input type="email" name="email" required className="mt-2 w-full rounded-xl bg-navy-900 border border-navy-700 px-4 py-3 text-mist outline-none focus:border-gold-500 transition" />
+            <label htmlFor="email" className="font-mono text-xs uppercase tracking-wide text-slate">Email</label>
+            <input id="email" type="email" name="email" required className="mt-2 w-full rounded-xl bg-navy-900 border border-navy-700 px-4 py-3 text-mist outline-none focus:border-gold-500 transition" />
           </div>
           <div>
-            <label className="font-mono text-xs uppercase tracking-wide text-slate">Message</label>
-            <textarea name="message" rows={5} required className="mt-2 w-full rounded-xl bg-navy-900 border border-navy-700 px-4 py-3 text-mist outline-none focus:border-gold-500 transition resize-none" />
+            <label htmlFor="message" className="font-mono text-xs uppercase tracking-wide text-slate">Message</label>
+            <textarea id="message" name="message" rows={5} required className="mt-2 w-full rounded-xl bg-navy-900 border border-navy-700 px-4 py-3 text-mist outline-none focus:border-gold-500 transition resize-none" />
           </div>
           <button type="submit" disabled={status === "sending"} className="w-full sm:w-auto px-8 py-4 rounded-full bg-gold-500 text-navy-950 font-semibold hover:bg-gold-400 hover:-translate-y-0.5 transition-all disabled:opacity-60">
             {status === "sending" ? "Sending…" : "Send message"}
