@@ -14,7 +14,7 @@ const links = [
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
-  const linkClass = ({ isActive }) =>
+  const linkClass = ({ isActive }: { isActive: boolean }) =>
     `relative py-1 text-sm font-medium transition-colors after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:bg-gold-500 after:transition-all after:duration-300 ${
       isActive
         ? "text-mist after:w-full"

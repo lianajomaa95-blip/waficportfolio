@@ -36,4 +36,7 @@ h1, h2, h3, h4 {
   line-height: 1.12;
 }
 
+h1 { letter-spacing: -0.03em; }
+h3, h4 { letter-spacing: -0.005em; }
+
 ::selection { background-color: var(--color-gold-500); color: var(--color-navy-950); }

@@ -1,27 +1,31 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import type { MotionProps } from "framer-motion";
 
 const ACCESS_KEY = "8b34f219-e0e9-4255-895f-fba1376708d0";
 
-const fade = {
+const fade: MotionProps = {
   initial: { opacity: 0, y: 12 },
   animate: { opacity: 1, y: 0 },
   transition: { duration: 0.5, ease: "easeOut" },
 };
 
 export default function Contact() {
-  const [status, setStatus] = useState("idle");
+  type Status = "idle" | "sending" | "sent" | "error";
 
-  const onSubmit = async (e) => {
+  const [status, setStatus] = useState<Status>("idle");
+
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const form = e.currentTarget;
     setStatus("sending");
-    const formData = new FormData(e.target);
+    const formData = new FormData(form);
     formData.append("access_key", ACCESS_KEY);
     formData.append("subject", "New message from your portfolio");
     try {
       const res = await fetch("https://api.web3forms.com/submit", { method: "POST", body: formData });
       const data = await res.json();
-      if (data.success) { setStatus("sent"); e.target.reset(); }
+      if (data.success) { setStatus("sent"); form.reset(); }
       else setStatus("error");
     } catch { setStatus("error"); }
   };
@@ -58,7 +62,7 @@ export default function Contact() {
           </div>
           <div>
             <label className="font-mono text-xs uppercase tracking-wide text-slate">Message</label>
-            <textarea name="message" rows="5" required className="mt-2 w-full rounded-xl bg-navy-900 border border-navy-700 px-4 py-3 text-mist outline-none focus:border-gold-500 transition resize-none" />
+            <textarea name="message" rows={5} required className="mt-2 w-full rounded-xl bg-navy-900 border border-navy-700 px-4 py-3 text-mist outline-none focus:border-gold-500 transition resize-none" />
           </div>
           <button type="submit" disabled={status === "sending"} className="w-full sm:w-auto px-8 py-4 rounded-full bg-gold-500 text-navy-950 font-semibold hover:bg-gold-400 hover:-translate-y-0.5 transition-all disabled:opacity-60">
             {status === "sending" ? "Sending…" : "Send message"}

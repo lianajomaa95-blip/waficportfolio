@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import type { MotionProps } from "framer-motion";
 import certFire from "../assets/revit-fire.webp";
 import certPlumbing from "../assets/revit-plumbing.webp";
 import certVentilation from "../assets/revit-ventilation.webp";
 import certMep from "../assets/revit-mep.webp";
 import certIc3 from "../assets/computing-fundementals.webp";
 
-const fade = {
+const fade: MotionProps = {
   initial: { opacity: 0, y: 12 },
   animate: { opacity: 1, y: 0 },
   transition: { duration: 0.5, ease: "easeOut" },
@@ -25,7 +26,7 @@ export default function Certifications() {
   const [index, setIndex] = useState(0);
   const total = certificates.length;
   const cert = certificates[index];
-  const go = (dir) => setIndex((i) => (i + dir + total) % total);
+  const go = (dir: number) => setIndex((i) => (i + dir + total) % total);
 
   return (
     <motion.div {...fade} className="max-w-4xl mx-auto px-5 sm:px-6 py-10 md:py-20">
