@@ -7,6 +7,12 @@ import fullBuilding from "../assets/full-building.webp";
 import entertainment from "../assets/entertainment.webp";
 import mepDistribution from "../assets/mep-services-distribution.webp";
 import plantRoom from "../assets/plant-and-pump-room.webp";
+import baskinta from "../assets/baskinta-residence.webp";
+import caspian from "../assets/caspian-tower.webp";
+import synchord from "../assets/synchord-tower.webp";
+import dachounyye from "../assets/dachounyye-building.webp";
+import phoenix from "../assets/phoenix-rising.webp";
+import turtleBay from "../assets/turtle-bay-ksa.webp";
 
 const fade: MotionProps = {
   initial: { opacity: 0, y: 12 },
@@ -14,13 +20,27 @@ const fade: MotionProps = {
   transition: { duration: 0.5, ease: "easeOut" },
 };
 
-const projects = [
+type Project = {
+  img: string;
+  tag: string;
+  title: string;
+  desc: string;
+  fit?: "cover" | "contain";
+};
+
+const projects: Project[] = [
   { img: makkah, tag: "HVAC · Chiller Plant", title: "Chiller Plant", desc: "Coordinated chiller plant and chilled-water pump room — Makkah Entertainment Complex." },
   { img: mepCoordination, tag: "Coordination", title: "MEP Coordination Model", desc: "A clash-free multidiscipline model bringing HVAC, fire, plumbing and electrical together." },
   { img: fullBuilding, tag: "BIM · LOD 400", title: "Full-Building Services", desc: "A complete building services model, from plant rooms to distribution." },
   { img: entertainment, tag: "Architecture · MEP", title: "Entertainment Complex", desc: "Large-scale architectural and MEP modeling with a domed central atrium." },
   { img: mepDistribution, tag: "Distribution", title: "Services Distribution", desc: "Ceiling services threaded cleanly across the building floorplate." },
   { img: plantRoom, tag: "Plant Room", title: "Plant & Pump Room", desc: "A pump and riser room resolved down to equipment layout and routing." },
+  { img: baskinta, tag: "HVAC · Ductwork", title: "Baskinta Residence", desc: "Ductwork layout and distribution with a full duct gauge and support schedule.", fit: "contain" },
+  { img: caspian, tag: "Fire Protection", title: "Caspian Tower", desc: "Sprinkler coverage and fire-protection layout across a podium parking level in Nigeria.", fit: "contain" },
+  { img: synchord, tag: "Plumbing · Water Supply", title: "Synchord Tower", desc: "Water supply distribution routed apartment by apartment across a residential floor plate.", fit: "contain" },
+  { img: dachounyye, tag: "Drainage · Waste", title: "Dachounyye Building", desc: "Soil, waste and vent drainage set out through kitchens, bathrooms and service cores.", fit: "contain" },
+  { img: phoenix, tag: "Riser Diagram", title: "Phoenix Rising", desc: "Vertical riser schematic tracing services floor by floor through a high-rise in Nigeria.", fit: "contain" },
+  { img: turtleBay, tag: "HVAC · Ventilation", title: "Turtle Bay KSA", desc: "First-floor ventilation layout coordinated across a complex, irregular floor plan.", fit: "contain" },
 ];
 
 const featured = [
@@ -30,7 +50,6 @@ const featured = [
   "Saint George Hospital",
   "Luxury Miami Residences",
 ];
-
 export default function Projects() {
   return (
     <motion.div {...fade} className="max-w-6xl mx-auto px-5 sm:px-6 py-10 md:py-20">
@@ -48,13 +67,13 @@ export default function Projects() {
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         {projects.map((p, i) => (
           <article key={p.title} className="group relative rounded-2xl overflow-hidden border border-navy-800 bg-navy-900 hover:border-navy-600 transition">
-            <div className="aspect-[4/3] overflow-hidden">
+            <div className="aspect-[4/3] overflow-hidden bg-navy-950">
               <img
                 src={p.img}
                 alt={p.title}
                 loading={i < 2 ? "eager" : "lazy"}
                 decoding="async"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                className={`w-full h-full transition-transform duration-700 group-hover:scale-105 ${p.fit === "contain" ? "object-contain" : "object-cover"}`}
               />
             </div>
             <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/25 to-transparent pointer-events-none" />
